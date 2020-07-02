@@ -1,7 +1,7 @@
 <?php
 
 $email = $_POST["email"];
-$lname = $_POST["lname"];
+// $lname = $_POST["lname"];
 $lpw = $_POST["lpw"];
 
 // DB接続の設定
@@ -9,9 +9,9 @@ require '../model/funcs.php';
 $pdo = connect_db();
 
 // 2.SQL準備&実行
-$sql = 'SELECT * FROM user_table WHERE u_name=:lname AND u_pw=:lpw';
+$sql = 'SELECT * FROM user_table WHERE email=:email AND u_pw=:lpw';
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':lname', $lname);
+$stmt->bindValue(':email', $email);
 $stmt->bindValue(':lpw', $lpw);
 $status = $stmt->execute();
 

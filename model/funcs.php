@@ -1,7 +1,7 @@
 <?PHP
 // セッションスタート
 session_start();
-loginCheck();
+
 // データベース接続関数
 function connect_db() {
   

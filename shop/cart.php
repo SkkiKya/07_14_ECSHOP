@@ -1,6 +1,7 @@
 <?php
 
 require '../model/funcs.php';
+loginCheck();
 $rows = array();
 $sum = 0;
 $pdo = connect_db();

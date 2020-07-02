@@ -1,6 +1,7 @@
 <?php
 
 require '../model/funcs.php';
+loginCheck();
 $error = $name = $comment = $price = '';
 $pdo = connect_db();
 if (@$_POST['submit']) {

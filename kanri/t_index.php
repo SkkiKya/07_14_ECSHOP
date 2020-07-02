@@ -29,5 +29,6 @@
         <a href="insert.php">新規追加</a>
         <a href="../shop/index.php" target="_blank">サイト確認</a>
       </div>
+      <a href="../kanri_login/logout.php">管理者ログアウト</a>
 </body>
 </html>

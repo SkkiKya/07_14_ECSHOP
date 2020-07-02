@@ -1,6 +1,7 @@
 <?php
 
 require '../model/funcs.php';
+loginCheck();
 $error = '';
 $pdo = connect_db();
 if (@$_POST['submit']) {

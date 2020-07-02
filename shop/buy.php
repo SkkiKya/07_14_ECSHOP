@@ -1,6 +1,7 @@
 <?php
 
 require '../model/funcs.php';
+loginCheck();
 $error = $name = $address = $tel = '';
 
 if(@$_POST['submit']) {

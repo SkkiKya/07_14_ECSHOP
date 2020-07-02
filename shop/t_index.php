@@ -35,5 +35,6 @@
     </tr>
     <?php endforeach ?>
   </table>
+  <a href="../user_login/logout.php">ログアウト</a>
 </body>
 </html>
