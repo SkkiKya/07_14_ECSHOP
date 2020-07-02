@@ -1,17 +1,19 @@
 <?php
-session_start();
-require_once('../db_Data/db.php');
+
+require '../model/funcs.php';
 $pdo = connect_db();
 
 // 受け取ったデータを変数に入れる
 $name = $_POST['u_name'];
+$email = $_POST['email'];
 $password = $_POST['u_pw'];
 
-$sql = "INSERT INTO `user_table`(`id`, `u_name`, `u_pw`, `indent`) VALUES (null,:name,:password,sysdate())";
+$sql = "INSERT INTO `user_table`(`id`, `u_name`,`email` , `u_pw`, `indent`) VALUES (null,:name,:email,:password,sysdate())";
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+$stmt->bindValue(':email', $email, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $status = $stmt->execute();
 
@@ -26,5 +28,7 @@ exit('sqlError:'.$error[2]);
   $_SESSION["chk_ssid"] = session_id();  //session_id();各ユーザーに一人一人違うキーを作成
   // 正常にSQLが実行された場合は入力ページファイルに移動し，入力ページの処理を実行する
   $_SESSION["u_name"] = $name;
-header('Location:../todo/index.php');
+header('Location:../shop/index.php');
 }
+
+

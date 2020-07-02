@@ -1,6 +1,6 @@
 <?php
 
-require 'common.php';
+require '../model/funcs.php';
 $rows = array();
 $sum = 0;
 $pdo = connect_db();

@@ -10,8 +10,8 @@
     <header>
         <nav>
             <div>
-                <a href="../kanri/index.php">管理ログイン</a>
-                <a href="signin_form.php">サインイン</a>
+                <a href="../kanri_login/login.php">管理者ログイン画面へ</a>
+                <a href="signin_form.php">サインインへ</a>
             </div>
         </nav>
     </header>
@@ -20,10 +20,9 @@
         <div>
             <fieldset>
                 <legend>ログイン</legend>
-                <label>NAME：<input type="text" name="lname"></label>
+                <label>E-mail：<input type="email" name="email"></label>
                 <label>PASSWORD：<input type="password" name="lpw"></label>
                 <input type="submit" value="ログイン">
-
             </fieldset>
         </div>
     </form>

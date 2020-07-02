@@ -12,5 +12,6 @@ session_regenerate_id();
 $new_session_id = session_id();
 
 
-echo "古いセッションId：$old_session_id<br>";
-echo "新しいセッションId：$new_session_id";
+// echo "古いセッションId：$old_session_id<br>";
+// echo "新しいセッションId：$new_session_id";
+// exit();

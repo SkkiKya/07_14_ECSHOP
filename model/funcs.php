@@ -1,6 +1,8 @@
-<?php
+<?PHP
+// セッションスタート
 session_start();
-
+loginCheck();
+// データベース接続関数
 function connect_db() {
   
   $db = 'mysql';
@@ -22,10 +24,30 @@ function connect_db() {
     // DB接続に失敗した場合はここでエラーを出力し，以降の処理を中止する
     echo json_encode(["db error" => "{$e->getMessage()}"]);
     exit();
-  }
-   
+  }  
 }
 
+// エスケープ関数
+function h($val){
+  return htmlspecialchars($val, ENT_QUOTES);
+}
+
+// LOGIN認証がされているかチェックする関数
+function loginCheck() {
+  // sessionIdがなかったり，一致しないと表示する。
+if( !isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"] != session_id() ){
+  echo "LOGIN ERROR!";
+  exit();
+}else {
+  // 新しいsessionIdを発行(前のセッションは無効)
+session_regenerate_id();
+// 新しいsessionIdを取得
+$_SESSION["chk_ssid"] = session_id();
+// echo "新しいセッションId：{$_SESSION["chk_ssid"]}";
+}
+}
+
+// 画像を表示する関数
 function img_tag($code) {
   if (file_exists("image/$code.jpg")) {
       $name = $code;
@@ -33,8 +55,4 @@ function img_tag($code) {
       $name ='sample_s';
   }
   return "<img src='image/$name.jpg' alt=''>";
-}
-
-function h($val){
-  return htmlspecialchars($val, ENT_QUOTES);
 }

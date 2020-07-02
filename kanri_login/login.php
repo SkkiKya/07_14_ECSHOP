@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <h1>管理者ログイン画面です</h1>
     <header>
         <nav>
             <div>
-                <a href="../kanri/index.php">管理ログイン</a>
-                <a href="signin_form.php">サインイン</a>
+                <a href="../user_login/login.php">ユーザーログイン画面へ</a>
             </div>
         </nav>
     </header>
@@ -20,7 +20,7 @@
         <div>
             <fieldset>
                 <legend>ログイン</legend>
-                <label>NAME：<input type="text" name="lname"></label>
+                <label>IDNAME：<input type="text" name="id_name"></label>
                 <label>PASSWORD：<input type="password" name="lpw"></label>
                 <input type="submit" value="ログイン">
 

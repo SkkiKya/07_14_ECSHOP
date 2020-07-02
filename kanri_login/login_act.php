@@ -1,16 +1,16 @@
 <?php
 session_start();
-$lname = $_POST["lname"];
+$id_name = $_POST["id_name"];
 $lpw = $_POST["lpw"];
-
+print
 // DB接続の設定
-include('../db_Data/db.php');
+require '../model/funcs.php';
 $pdo = connect_db();
 
 // 2.SQL準備&実行
-$sql = 'SELECT * FROM user_table WHERE u_name=:lname AND u_pw=:lpw';
+$sql = 'SELECT * FROM admin_table WHERE id_name=:id_name AND password=:lpw';
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':lname', $lname);
+$stmt->bindValue(':id_name', $id_name);
 $stmt->bindValue(':lpw', $lpw);
 $status = $stmt->execute();
 
@@ -29,12 +29,13 @@ $val = $stmt->fetch();
 // 4.該当レコードがあればSESSIONに値を代入
 if( $val["id"] != ""){
     $_SESSION["chk_ssid"] = session_id();  //session_id();各ユーザーに一人一人違うキーを作成
-    $_SESSION["u_name"] = $val["u_name"];
+    $_SESSION["admin_name"] = $val["id_name"];
     // 正常にSQL処理が実行された場合はtodo_input.phpに移動
     // echo $_SESSION["chk_ssid"];
     // exit();
-    header('Location:../todo/index.php');
+    header('Location:../kanri/index.php');
 }else {
+    exit();
     // NGの場合はlogin.phpに移動
     header('Location:NG.php');
 }

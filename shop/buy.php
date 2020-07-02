@@ -1,6 +1,6 @@
 <?php
 
-require 'common.php';
+require '../model/funcs.php';
 $error = $name = $address = $tel = '';
 
 if(@$_POST['submit']) {
@@ -34,7 +34,6 @@ if(@$_POST['submit']) {
     $from = "bookm9842@localhost";
     $to = "bookm9842@gmail.com";
     mb_send_mail($to, "購入メール", $body, "From: $from");
-    // mail($to, "購入メール", $body, "From: $from");
     $_SESSION['cart'] = null;
     require 't_buy_complete.php';
     exit();

@@ -1,6 +1,6 @@
 <?php
 
-require 'common.php';
+require '../model/funcs.php';
 $error = '';
 $pdo = connect_db();
 if (@$_POST['submit']) {

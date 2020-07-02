@@ -1,10 +1,11 @@
 <?php
-session_start();
+
+$email = $_POST["email"];
 $lname = $_POST["lname"];
 $lpw = $_POST["lpw"];
 
 // DB接続の設定
-include('../db_Data/db.php');
+require '../model/funcs.php';
 $pdo = connect_db();
 
 // 2.SQL準備&実行
@@ -33,7 +34,7 @@ if( $val["id"] != ""){
     // 正常にSQL処理が実行された場合はtodo_input.phpに移動
     // echo $_SESSION["chk_ssid"];
     // exit();
-    header('Location:../todo/index.php');
+    header('Location:../shop/index.php');
 }else {
     // NGの場合はlogin.phpに移動
     header('Location:NG.php');

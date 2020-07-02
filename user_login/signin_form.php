@@ -16,6 +16,9 @@
         YourName: <input type="text" name="u_name">
       </div>
       <div>
+        email: <input type="email" name="email">
+      </div>
+      <div>
         PassWord: <input type="password" name="u_pw">
       </div>
       <div>

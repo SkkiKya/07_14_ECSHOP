@@ -1,6 +1,6 @@
 <?php
 // 画像をアップロードするファイル
-require 'common.php';
+require '../model/funcs.php';
 
 $error = '';
 
