@@ -1,5 +1,6 @@
 <?php
-require 'common.php';
+require '../model/funcs.php';
+loginCheck();
 $pdo = connect_db();
 
 // 削除内容の取得

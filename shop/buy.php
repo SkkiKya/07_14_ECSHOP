@@ -1,17 +1,23 @@
 <?php
 
-require 'common.php';
-$error = $name = $address = $tel = '';
-
+require '../model/funcs.php';
+loginCheck();
+$error = $name = $email = $address = $tel = '';
+$email = $_SESSION["email"];
 if(@$_POST['submit']) {
-  $name = h($_POST['name']);
+  $name = h($_SESSION['u_name']);
   $address = h($_POST['address']);
   $tel = h($_POST['tel']);
   if (!$name) {
       $error .= 'お名前を入力してください<br>';
-  }if (!$address) {
+  }
+  if (!$email) {
+      $error .= 'メールアドレスを入力してください<br>';
+  }
+  if (!$address) {
       $error .= '住所を入力してください<br>';
-  }if (!$tel) {
+  }
+  if (!$tel) {
       $error .= '電話番号を入力してください<br>';
   }if(preg_match('/[^\d-]/', $tel)){
     $error .= '電話番号が正しくありません。<br>';
@@ -32,9 +38,8 @@ if(@$_POST['submit']) {
                 数量: $num<br>";
     }
     $from = "bookm9842@localhost";
-    $to = "bookm9842@gmail.com";
+    $to = $email;
     mb_send_mail($to, "購入メール", $body, "From: $from");
-    // mail($to, "購入メール", $body, "From: $from");
     $_SESSION['cart'] = null;
     require 't_buy_complete.php';
     exit();

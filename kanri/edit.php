@@ -1,6 +1,7 @@
 <?php
 
-require 'common.php';
+require '../model/funcs.php';
+loginCheck();
 $error = '';
 $pdo = connect_db();
 if (@$_POST['submit']) {
@@ -59,8 +60,6 @@ if (@$_POST['submit']) {
         $name = $row['name'];
         $comment = $row['comment'];
         $price = $row['price'];
-        // header("Location: index.php");
-        // exit();
     }
 }
 

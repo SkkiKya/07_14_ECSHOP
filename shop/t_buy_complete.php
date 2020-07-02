@@ -13,6 +13,6 @@
   <div class="base">
   <a href="index.php">お買い物い戻る</a>
   </div>
-
+  <?php include '../model/logout_button.php'; ?>
 </body>
 </html>
