@@ -8,6 +8,7 @@
 </head>
 <body>
   <h1>Noodle Shop</h1>
+  <h2>こんにちは！<?= $_SESSION['u_name']?>さん</h2>
   <table>
     <?php foreach ($goods as $g): ?>
     <tr>
