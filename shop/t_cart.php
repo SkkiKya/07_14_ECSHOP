@@ -25,5 +25,6 @@
     <a href="cart_empty.php">カートを空にする</a>
     <a href="buy.php">購入する</a>
   </div>
+  <?php include '../model/logout_button.php'; ?>
 </body>
 </html>

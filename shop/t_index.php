@@ -8,12 +8,12 @@
 </head>
 <body>
   <h1>Noodle Shop</h1>
-  <h2>こんにちは！<?= $_SESSION['u_name']?>さん</h2>
+  <h2>こんにちは！<?= h($_SESSION['u_name'])?>さん</h2>
   <table>
     <?php foreach ($goods as $g): ?>
     <tr>
     <td>
-    <?php echo img_tag($g['id']);?>
+    <?= img_tag($g['id']);?>
     </td>
     <td>
       <p class="goods"><?php echo $g['name'];?></p>
@@ -36,6 +36,6 @@
     </tr>
     <?php endforeach ?>
   </table>
-  <a href="../user_login/logout.php">ログアウト</a>
+          <?php include '../model/logout_button.php'; ?>
 </body>
 </html>

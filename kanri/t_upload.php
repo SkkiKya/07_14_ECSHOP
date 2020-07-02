@@ -26,5 +26,6 @@
   <div class="base">
     <a href="index.php">一覧に戻る</a>
   </div>
+  <?php include '../model/logout_button.php'; ?>
 </body>
 </html>

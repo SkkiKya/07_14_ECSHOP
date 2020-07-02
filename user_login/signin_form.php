@@ -9,7 +9,10 @@
 </head>
 <body>
   <a href="login.php">ログイン画面へ</a>
-  <form action="signin_act.php" method="post">
+  <?php if($error):?>
+      <?= "<span class='error'>$error</span>"?>
+      <?php endif ?>
+  <form action="signin.php" method="post">
   <fieldset>
       <legend>新規ユーザー（入力画面）</legend>
       <div>
@@ -22,7 +25,7 @@
         PassWord: <input type="password" name="u_pw">
       </div>
       <div>
-        <button>submit</button>
+      <input type="submit" name="submit" value="サインイン">
       </div>
     </fieldset>
   </form>

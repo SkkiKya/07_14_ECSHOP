@@ -11,13 +11,15 @@
   <table>
     <?php foreach($goods as $g): ?>
     <tr>
-      <td><?= img_tag($g['id']) ?></td>
+      <td>
+        <?= img_tag($g['id']); ?>
+      </td>
       <td>
         <p class="goods"><?= $g['name']?></p>
         <p><?= nl2br($g['comment']) ?></p>
       </td>
       <td width="80">
-        <P><?= $g['price'] ?></P>
+        <P>&yen;<?= $g['price'] ?></P>
         <P><a href="edit.php?id=<?=$g['id']?>">修正</a></P>
         <P><a href="upload.php?id=<?=$g['id']?>">アップロード</a></P>
         <P><a href="delete.php?id=<?=$g['id']?>" onclick="return confirm('削除してよろしいですか')">削除</a></P>
@@ -29,6 +31,6 @@
         <a href="insert.php">新規追加</a>
         <a href="../shop/index.php" target="_blank">サイト確認</a>
       </div>
-      <a href="../kanri_login/logout.php">管理者ログアウト</a>
+      <?php include '../model/logout_button.php'; ?>
 </body>
 </html>

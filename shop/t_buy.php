@@ -34,5 +34,6 @@
     <a href="index.php">お買い物い戻る</a>
     <a href="cart.php">カートに戻る</a>
   </div>
+  <?php include '../model/logout_button.php'; ?>
 </body>
 </html>

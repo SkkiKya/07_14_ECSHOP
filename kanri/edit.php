@@ -60,8 +60,6 @@ if (@$_POST['submit']) {
         $name = $row['name'];
         $comment = $row['comment'];
         $price = $row['price'];
-        // header("Location: index.php");
-        // exit();
     }
 }
 

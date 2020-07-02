@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>管理者ログイン画面です</h1>
+    <h1>ユーザーログイン画面です</h1>
     <header>
         <nav>
             <div>
-                <a href="../user_login/login.php">ユーザーログイン画面へ</a>
+                <a href="../kanri_login/login.php">管理者ログイン画面へ</a>
+                <a href="signin.php">サインインへ</a>
             </div>
         </nav>
     </header>
 
-    <form action="login_act.php" method="post">
+    <form action="login.php" method="post">
         <div>
             <fieldset>
                 <legend>ログイン</legend>
-                <label>IDNAME：<input type="text" name="id_name" autocomplete="off"></label>
+                <label>E-mail：<input type="email" name="email"></label>
                 <label>PASSWORD：<input type="password" name="lpw"></label>
                 <input type="submit" value="ログイン" name="submit">
-
             </fieldset>
         </div>
     </form>

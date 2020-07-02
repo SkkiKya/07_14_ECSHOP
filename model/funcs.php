@@ -48,11 +48,12 @@ $_SESSION["chk_ssid"] = session_id();
 }
 
 // 画像を表示する関数
+// アップロードした画像がここでコピーされ，表示に使われる
 function img_tag($code) {
   if (file_exists("image/$code.jpg")) {
       $name = $code;
   }else {
       $name ='sample_s';
   }
-  return "<img src='image/$name.jpg' alt=''>";
+  return "<img src='image/$name.jpg' alt='' width='100' height='100'>";
 }
