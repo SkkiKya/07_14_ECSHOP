@@ -31,6 +31,7 @@ $val = $stmt->fetch();
 if( $val["id"] != ""){
     $_SESSION["chk_ssid"] = session_id();  //session_id();各ユーザーに一人一人違うキーを作成
     $_SESSION["u_name"] = $val["u_name"];
+    $_SESSION["email"] = $val["email"];
     // 正常にSQL処理が実行された場合はtodo_input.phpに移動
     // echo $_SESSION["chk_ssid"];
     // exit();

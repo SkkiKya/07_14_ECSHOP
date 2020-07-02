@@ -18,8 +18,8 @@
         <input type="text" name="name" value="<?= $name ?>">
       </p>
       <p>
-        住所<br>
-        <input type="text" name="address" value="<?= $address ?>">
+        メールアドレス<br>
+        <input type="text" name="address" value="<?= $email ?>">
       </p>
       <p>
         電話番号<br>
