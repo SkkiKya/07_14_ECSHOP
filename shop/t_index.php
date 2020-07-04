@@ -9,6 +9,7 @@
 <body>
   <h1>Noodle Shop</h1>
   <h2>こんにちは！<?= h($_SESSION['u_name'])?>さん</h2>
+  <a href="cart.php">カートを見る</a>
   <table>
     <?php foreach ($goods as $g): ?>
     <tr>
@@ -17,10 +18,10 @@
     </td>
     <td>
       <p class="goods"><?php echo $g['name'];?></p>
-      <p><?php echo nl2br($g['comment']); ?></p>
+      <p><?= nl2br($g['comment']); ?></p>
     </td>
     <td width="80">
-      <p><?php echo $g['price'] ?> 円</p>
+      <p><?= $g['price'] ?> 円</p>
       <form action="cart.php" method="post">
         <select name="num" id="">
           <?php
@@ -29,7 +30,7 @@
           }
           ?>
         </select>
-        <input type="hidden" name="id" value="<?php echo $g['id'] ?>">
+        <input type="hidden" name="id" value="<?= $g['id'] ?>">
         <input type="submit" value="カートへ" name="submit">
       </form>
     </td>
