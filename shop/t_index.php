@@ -8,8 +8,8 @@
 </head>
 <body>
   <h1>Noodle Shop</h1>
-  <h2>こんにちは！<?= h($_SESSION['u_name'])?>さん</h2>
-  <a href="cart.php">カートを見る</a>
+  <h2>こんにちは！<?php $user = h($_SESSION['u_name']); echo $user; ?>さん</h2>
+  <p><a href="cart.php"><?= $user ?>さんのカートを見る</a></p>
   <table>
     <?php foreach ($goods as $g): ?>
     <tr>

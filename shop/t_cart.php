@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>カート</h1>
+  <h1><?= h($_SESSION['u_name']) ?>さんのカートです</h1>
   <table>
     <tr><th>商品</th><th>単価</th><th>数量</th><th>小計</th></tr>
     <?php foreach($rows as $r): ?>
