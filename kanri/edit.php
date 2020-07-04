@@ -22,8 +22,9 @@ if (@$_POST['submit']) {
         $error .= '価格が不正です。<br>';
     }
     if (!$error) {
-        $sql = "UPDATE items SET :name, :comment, :price";
+        $sql = "UPDATE items SET name=:name, comment=:comment, price=:price where id=:id";
         $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->bindValue(':name', $name, PDO::PARAM_STR);
         $stmt->bindValue(':comment', $comment, PDO::PARAM_STR);
         $stmt->bindValue(':price', $price, PDO::PARAM_INT);
